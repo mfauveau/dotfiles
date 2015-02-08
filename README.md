@@ -7,7 +7,7 @@ My OS X dotfiles.
 
 The installation step requires the [XCode Command Line
 Tools](https://developer.apple.com/downloads) and may overwrite existing
-dotfiles in your HOME and `.vim` directories.
+dotfiles in your HOME directory.
 
 ```bash
 $ bash -c "$(curl -fsSL raw.github.com/mfauveau/dotfiles/master/bin/dotfiles)"
