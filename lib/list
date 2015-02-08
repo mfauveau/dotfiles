@@ -1,0 +1,28 @@
+#!/bin/bash
+
+run_list() {
+
+cat <<EOT
+
+OS X dotfiles - Matthieu Fauveau
+
+Additional software to install
+
+Browsers:
+    Firefox
+    Google Chrome
+
+Development:
+    iTerm 2
+    ImageAlpha
+    ImageOptim
+    VirtualBox
+
+Other:
+    Dropbox
+    Flux
+    1Password
+    Skype
+EOT
+
+}

@@ -1,0 +1,73 @@
+#!/bin/bash
+
+# General UI/UX
+# -------------
+
+# Enable snap-to-grid for desktop icons
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+
+# Automatically quit printer app once the print jobs complete
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
+# Disable Resume system-wide
+defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
+
+# Don’t automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
+
+# Dock
+# ----
+
+# Dock: make icons of hidden applications translucent
+defaults write com.apple.dock showhidden -bool true
+
+# Finder
+# ------
+
+# Finder: show hidden files by default
+defaults write com.apple.finder AppleShowAllFiles -bool true
+
+# Finder: use list view in all windows by default
+# Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+# Panels
+# ------
+
+# Panels: expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+# Panels: expand print panel by default
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+
+
+# Screen
+# ------
+
+# Screen: enable subpixel font rendering on non-Apple LCDs
+defaults write NSGlobalDomain AppleFontSmoothing -int 2
+
+# Disks
+# -----
+
+# Disks: avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# iTunes
+# ------
+
+# iTunes: disable the Ping sidebar in iTunes
+defaults write com.apple.iTunes disablePingSidebar -bool true
+
+# iTunes: disable all the other Ping stuff
+defaults write com.apple.iTunes disablePing -bool true
+
+# Misc
+# ----
+
+# Misc: only use UTF-8 in Terminal.app
+defaults write com.apple.terminal StringEncodings -array 4
+
+for app in "Dashboard" "Dock" "Finder" "SystemUIServer" "Terminal" "iTunes"; do
+    killall "$app" > /dev/null 2>&1
+done
