@@ -68,6 +68,18 @@ if ! type_exists 'git'; then
     brew install git
 fi
 
+# Check for Composer
+composer -v > /dev/null 2>&1
+COMPOSER_IS_INSTALLED=$?
+
+if [[ $COMPOSER_IS_INSTALLED -ne 0 ]]; then
+    e_header "Installing Composer..."
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
+else
+    e_header "Updating Composer..."
+    sudo /usr/local/bin/composer.phar self-update
+fi
+
 # Initialize the git repository if it's missing
 if ! is_git_repo; then
     e_header "Initializing git repository..."
@@ -112,7 +124,7 @@ mirrorfiles() {
     # Copy `.gitconfig`.
     # Any global git commands in `~/.bash_profile.local` will be written to
     # `.gitconfig`. This prevents them being committed to the repository.
-    rsync -avz --quiet ${DOTFILES_DIRECTORY}/git/gitconfig  ${HOME}/.gitconfig 
+    rsync -avz --quiet ${DOTFILES_DIRECTORY}/git/gitconfig  ${HOME}/.gitconfig
 
     # Create the necessary symbolic links between the `.dotfiles` and `HOME`
     # directory. The `bash_profile` sources other files directly from the
@@ -123,6 +135,7 @@ mirrorfiles() {
     link "shell/inputrc"      ".inputrc"
     link "git/gitattributes"  ".gitattributes"
     link "git/gitignore"      ".gitignore"
+    link "atom/config"        ".atom/config.cson"
 
     e_success "Dotfiles update complete!"
 }
