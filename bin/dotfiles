@@ -80,10 +80,11 @@ else
     sudo /usr/local/bin/composer.phar self-update
 fi
 
-# Enable Xdebug for local PHP
+# Enable Xdebug for local PHP, set Timezone
 if [ ! -f /etc/php.ini ]; then
     sudo cp /etc/php.ini.default /etc/php.ini
     sudo sh -c 'echo zend_extension=$(find /usr/lib/php/extensions -name "xdebug.so") >> $(php -qr "echo php_ini_loaded_file();") && apachectl restart'
+    sudo sh -c 'echo date.timezone = UTC >> $(php -qr "echo php_ini_loaded_file();")'
 fi
 
 # Initialize the git repository if it's missing
