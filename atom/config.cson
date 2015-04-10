@@ -3,9 +3,6 @@
     onSave: "untabify"
   core:
     projectHome: "/Users/mfauveau/Documents/Devel"
-    disabledPackages: [
-      "file-type-icons"
-    ]
     themes: [
       "one-dark-ui"
       "atom-dark-syntax"
