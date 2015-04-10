@@ -1,22 +1,38 @@
-'*':
-  'core':
-    'projectHome': '/Users/mfauveau/Documents/Devel'
-  'editor':
-    'fontFamily': 'Ubuntu Mono'
-    'lineHeight': 1.4
-    'showIndentGuide': true
-    'tabLength': 4
-    'softWrap': true
-    'scrollPastEnd': true
-    'invisibles': {
-        'cr': '↩'
-        'eol': ''
-        'space': '·'
-        'tab': '⇥'
-    }
-    'zoomFontWhenCtrlScrolling': true
-    'showInvisibles': true
-  'exception-reporting':
-    'userId': '7b88acbb-724c-92f5-c1b3-32cc094e36b8'
-  'welcome':
-    'showOnStartup': false
+"*":
+  "tabs-to-spaces":
+    onSave: "untabify"
+  core:
+    projectHome: "/Users/mfauveau/Documents/Devel"
+    disabledPackages: [
+      "file-type-icons"
+    ]
+    themes: [
+      "one-dark-ui"
+      "atom-dark-syntax"
+    ]
+  editor:
+    fontFamily: "Ubuntu Mono"
+    lineHeight: 1.4
+    showIndentGuide: true
+    tabLength: 4
+    softWrap: true
+    scrollPastEnd: true
+    invisibles:
+      tab: ""
+      cr: ""
+      eol: ""
+      spaces: "."
+    zoomFontWhenCtrlScrolling: true
+    softTabs: false
+    showInvisibles: true
+  "exception-reporting":
+    userId: "7b88acbb-724c-92f5-c1b3-32cc094e36b8"
+  welcome:
+    showOnStartup: false
+  docblockr: {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  "fuzzy-finder": {}
+".js.source":
+  "tabs-to-spaces":
+    onSave: "none"
