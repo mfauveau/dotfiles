@@ -3,7 +3,7 @@
 run_pip() {
 
     # Check for python
-    if type_exists 'python'; then
+    if type_exists 'pip'; then
         e_header "Installing Python packages..."
 
         # List of python packages
