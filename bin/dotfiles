@@ -70,7 +70,7 @@ if ! type_exists 'git'; then
 fi
 
 # Check for Composer
-composer -v > /dev/null 2>&1
+composer -V > /dev/null 2>&1
 COMPOSER_IS_INSTALLED=$?
 
 if [[ $COMPOSER_IS_INSTALLED -ne 0 ]]; then
@@ -89,7 +89,7 @@ if [ ! -f /etc/php.ini ]; then
 fi
 
 # Check for Pip
-pip -V > /dev/null 2>&
+pip -V > /dev/null 2>&1
 PIP_IS_INSTALLED=$?
 
 if [[ $PIP_IS_INSTALLED -ne 0 ]]; then
