@@ -40,4 +40,6 @@ load_dotfiles() {
 load_dotfiles
 unset load_dotfiles
 
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Development
 source /usr/local/bin/virtualenvwrapper.sh
