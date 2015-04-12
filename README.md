@@ -81,6 +81,12 @@ Node packages:
 * [jshint](http://www.jshint.com/)
 * [gulp](http://gulpjs.com/)
 
+Python packages:
+
+* [virtualenv](https://virtualenv.pypa.io/en/latest/)
+* [virtualenvwrapper](https://virtualenvwrapper.readthedocs.org/en/latest/)
+* [bpython](http://www.bpython-interpreter.org/)
+
 ### Custom OS X defaults
 
 Custom OS X settings can be applied during the `dotfiles` process. They can
