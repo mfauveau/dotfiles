@@ -88,6 +88,18 @@ if [ ! -f /etc/php.ini ]; then
     sudo sh -c 'echo date.timezone = UTC >> $(php -qr "echo php_ini_loaded_file();")'
 fi
 
+# Check for Pip
+pip -V > /dev/null 2>&
+PIP_IS_INSTALLED=$?
+
+if [[ $PIP_IS_INSTALLED -ne 0 ]]; then
+    e_header "Installing pip..."
+    sudo easy_install pip
+else
+    e_header "Updating pip..."
+    sudo pip install --upgrade pip
+fi
+
 # Initialize the git repository if it's missing
 if ! is_git_repo; then
     e_header "Initializing git repository..."
