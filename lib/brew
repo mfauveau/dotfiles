@@ -32,6 +32,7 @@ run_brew() {
             'tree'
             'wget'
             'python'
+            'autoenv'
         )
 
         for index in ${!desired_formulae[*]}
