@@ -23,6 +23,7 @@ source ./lib/list
 source ./lib/utils
 source ./lib/brew
 source ./lib/npm
+source ./lib/pip
 
 # Help text
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
@@ -120,6 +121,8 @@ else
     run_brew
     # Install Node packages
     run_npm
+    # Install Python packages
+    run_pip
 fi
 
 link() {

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+run_pip() {
+
+    # Check for python
+    if type_exists 'python'; then
+        e_header "Installing Python packages..."
+
+        # List of python packages
+        local packages="virtualenv virtualenvwrapper ipython"
+
+        # Install packages
+        pip install $packages
+
+        [[ $? ]] && e_success "Done"
+    else
+        printf "\n"
+        e_error "Error: python not found."
+        printf "Aborting...\n"
+        exit
+    fi
+
+}
