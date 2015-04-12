@@ -10,6 +10,17 @@
 # iTerm2 prefs: import Solarized theme (disable bright colors for bold text)
 # Color ref: http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
 # More tips: http://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html
+VIRTUAL_ENV_DISABLE_PROMPT=1
+export VIRTUAL_ENV_DISABLE_PROMPT
+
+prompt_virtualenv() {
+    VIRT_ENV_TXT="(`basename \"$VIRTUAL_ENV\"`)"
+    if [ "${VIRT_ENV_TXT}" != "()" ]; then
+       echo ${VIRT_ENV_TXT}" "
+    else
+       return
+    fi
+}
 
 prompt_git() {
     local s=""
@@ -129,6 +140,7 @@ set_prompts() {
     PS1="\[\033]0;\w\007\]"
 
     PS1+="\n" # newline
+    PS1+="\$(prompt_virtualenv)" # virtualenv
     PS1+="\[$userStyle\]\u" # username
     PS1+="\[$reset$white\]@"
     PS1+="\[$hostStyle\]\h" # host
