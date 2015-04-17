@@ -157,7 +157,8 @@ mirrorfiles() {
     link "shell/inputrc"      ".inputrc"
     link "git/gitattributes"  ".gitattributes"
     link "git/gitignore"      ".gitignore"
-    link "atom/config"        ".atom/config.cson"
+    link "atom/config"        ".atom/config"
+    link "atom/config.cson"   ".atom/config.cson"
 
     e_success "Dotfiles update complete!"
 }

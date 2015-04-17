@@ -15,9 +15,6 @@
     softWrap: true
     scrollPastEnd: true
     invisibles:
-      tab: ""
-      cr: ""
-      eol: ""
       spaces: "."
     zoomFontWhenCtrlScrolling: true
     softTabs: false
@@ -30,6 +27,9 @@
   "tree-view":
     hideVcsIgnoredFiles: true
   "fuzzy-finder": {}
+  linter: {}
 ".js.source":
   "tabs-to-spaces":
     onSave: "none"
+"linter-php":
+  phpExecutablePath: "/usr/bin/php"
