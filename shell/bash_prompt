@@ -140,7 +140,7 @@ set_prompts() {
 
     PS1+="\n" # newline
     PS1+="\[$white\]\t - "
-    PS1+="\[$reset$purple\]\$(prompt_virtualenv)" # virtualenv
+    PS1+="\$(prompt_virtualenv)" # virtualenv
     PS1+="\[$reset$bold$userStyle\]\u" # username
     PS1+="\[$reset$bold\] at "
     PS1+="\[$reset$bold$hostStyle\]\h" # host
