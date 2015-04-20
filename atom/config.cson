@@ -23,7 +23,9 @@
     userId: "7b88acbb-724c-92f5-c1b3-32cc094e36b8"
   welcome:
     showOnStartup: false
-  docblockr: {}
+  docblockr:
+    auto_add_method_tag: true
+    spacer_between_sections: true
   "tree-view":
     hideVcsIgnoredFiles: true
   "fuzzy-finder": {}
