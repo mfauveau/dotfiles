@@ -1,5 +1,7 @@
 docblockr@0.6.3
+emmet@2.3.7
 file-icons@1.5.4
+git-diff@0.54.0
 language-blade@0.12.0
 linter@0.12.0
 linter-php@0.0.12
