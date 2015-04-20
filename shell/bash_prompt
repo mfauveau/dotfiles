@@ -141,10 +141,10 @@ set_prompts() {
     PS1+="\n" # newline
     PS1+="\[$white\]\t - "
     PS1+="\$(prompt_virtualenv)" # virtualenv
-    PS1+="\[$userStyle\]\u" # username
-    PS1+="\[$reset\]\[$bold\] at "
-    PS1+="\[$hostStyle\]\h" # host
-    PS1+="\[$reset\]\[$bold\] in "
+    PS1+="\[$reset$userStyle\]\u" # username
+    PS1+="\[$reset$bold\] at "
+    PS1+="\[$reset$hostStyle\]\h" # host
+    PS1+="\[$reset$bold\] in "
     PS1+="\[$reset$green\]\w" # working directory
     PS1+="\$(prompt_git \"$reset$bold on $reset$cyan\")" # git repository details
     PS1+="\n"

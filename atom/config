@@ -1,0 +1,22 @@
+{
+  "*": {
+    "exception-reporting": {
+      "userId": "6e561c58-5c2b-6446-536f-4f48d7e431c7"
+    },
+    "welcome": {
+      "showOnStartup": false
+    },
+    "core": {
+      "themes": [
+        "one-dark-ui",
+        "atom-dark-syntax"
+      ]
+    },
+    "editor": {
+      "invisibles": {},
+      "softWrap": true,
+      "tabLength": 4
+    },
+    "linter": {}
+  }
+}
