@@ -7,6 +7,9 @@
       "one-dark-ui"
       "atom-dark-syntax"
     ]
+    disabledPackages: [
+      "linter-python-pep8"
+    ]
   editor:
     fontFamily: "Ubuntu Mono"
     lineHeight: 1.4
@@ -24,12 +27,18 @@
   welcome:
     showOnStartup: false
   docblockr:
-    auto_add_method_tag: true
     spacer_between_sections: true
+    simple_mode: false
   "tree-view":
     hideVcsIgnoredFiles: true
   "fuzzy-finder": {}
-  linter: {}
+  linter:
+    subtleLinterErrors: [
+      "pep8"
+    ]
+  minimap:
+    plugins:
+      "git-diff": true
 ".js.source":
   "tabs-to-spaces":
     onSave: "none"
