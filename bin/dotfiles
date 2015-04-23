@@ -19,7 +19,6 @@ fi
 cd ${DOTFILES_DIRECTORY}
 
 source ./lib/help
-source ./lib/list
 source ./lib/utils
 source ./lib/brew
 source ./lib/npm
@@ -28,12 +27,6 @@ source ./lib/pip
 # Help text
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
     run_help
-    exit
-fi
-
-# List additional software to install
-if [[ "$1" == "-l" || "$1" == "--list" ]]; then
-    run_list
     exit
 fi
 
@@ -172,6 +165,17 @@ if is_confirmed; then
     source ${HOME}/.bash_profile
 else
     printf "Aborting...\n"
+    exit 1
+fi
+
+# Ask before installing apps through brew cask
+seek_confirmation "Would you like to automatically install your OS X applications?"
+
+if is_confirmed; then
+    source ./lib/apps
+    run_apps
+else
+    printf "Skipped installing OS X applications.\n"
     exit 1
 fi
 

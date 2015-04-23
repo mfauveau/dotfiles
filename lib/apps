@@ -1,0 +1,71 @@
+#!/bin/bash
+
+run_apps() {
+
+    # Check for Homebrew
+    if type_exists 'brew'; then
+        e_header "Updating Homebrew..."
+        # Use the latest version of Homebrew
+        brew update
+        [[ $? ]] && e_success "Done"
+
+        e_header "Checking status of Homebrew Cask..."
+        if ! formula_exists 'brew-cask'; then
+            e_header "Installing Homebrew Cask..."
+            brew install caskroom/cask/brew-cask
+            [[ $? ]] && e_success "Done"
+        fi
+        e_success "Done"
+
+        local list_casks
+        local -a missing_casks
+        local -a desired_casks=(
+            # Development Tools
+            'iterm2'
+            'atom'
+            'tower'
+            'navicat-premium'
+            'imagealpha'
+            'imageoptim'
+            'virtualbox'
+            'vagrant'
+            'vagrant-manager'
+
+            # Browsers
+            'google-chrome'
+            'firefox'
+
+            # Utilities
+            'dropbox'
+            'flux'
+            '1password'
+            'skype'
+        )
+
+        for index in ${!desired_casks[*]}
+        do
+            if ! cask_exists ${desired_casks[$index]}; then
+                # Store the name (and options) of every missing cask
+                missing_casks=("${missing_casks[@]}" "${desired_casks[$index]}")
+            fi
+        done
+
+        if [[ "$missing_casks" ]]; then
+            # Convert the array of missing cask into a list of space-separate strings
+            list_casks=$( printf "%s " "${missing_casks[@]}" )
+
+            e_header "Installing missing Homebrew Casks..."
+            # Install all missing casks
+            brew cask install --appdir=/Applications $list_casks
+
+            [[ $? ]] && e_success "Done"
+        fi
+
+        brew cask cleanup
+    else
+        printf "\n"
+        e_error "Error: Homebrew not found."
+        printf "Aborting...\n"
+        exit
+    fi
+}
