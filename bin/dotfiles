@@ -74,6 +74,9 @@ else
     sudo /usr/local/bin/composer.phar self-update
 fi
 
+e_header "Installing/Updating Composer packages..."
+sudo /usr/local/bin/composer.phar global require fabpot/php-cs-fixer
+
 # Enable Xdebug for local PHP, set Timezone
 if [ ! -f /etc/php.ini ]; then
     sudo cp /etc/php.ini.default /etc/php.ini

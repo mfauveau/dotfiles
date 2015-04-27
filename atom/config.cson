@@ -9,6 +9,7 @@
     ]
     disabledPackages: [
       "linter-python-pep8"
+      "language-blade"
     ]
   editor:
     fontFamily: "Ubuntu Mono"
@@ -39,6 +40,11 @@
   minimap:
     plugins:
       "git-diff": true
+  "atom-beautify":
+    beautifyEntireFileOnSave: false
+    php_cs_fixer_path: "~/.composer/vendor/bin/php-cs-fixer"
+    _analyticsUserId: "d7c2bb3b-c00d-4ed6-a911-d217135659e3"
+    python_autopep8_path: "/usr/local/bin/autopep8"
 ".js.source":
   "tabs-to-spaces":
     onSave: "none"
