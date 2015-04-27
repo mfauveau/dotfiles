@@ -1,2 +1,3 @@
 Host *
+ServerAliveInterval 30
 ServerAliveInterval 120
