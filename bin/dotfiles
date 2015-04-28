@@ -168,7 +168,6 @@ if is_confirmed; then
     source ${HOME}/.bash_profile
 else
     printf "Aborting...\n"
-    exit 1
 fi
 
 # Ask before installing apps through brew cask
@@ -179,7 +178,6 @@ if is_confirmed; then
     run_apps
 else
     printf "Skipped installing OS X applications.\n"
-    exit 1
 fi
 
 # Ask before potentially overwriting OS X defaults

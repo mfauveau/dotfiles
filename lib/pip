@@ -7,7 +7,7 @@ run_pip() {
         e_header "Installing Python packages..."
 
         # List of python packages
-        local packages="virtualenv virtualenvwrapper bpython pep8 autopep8"
+        local packages="virtualenv virtualenvwrapper bpython pep8 autopep8 eg"
 
         # Install packages
         pip install $packages
