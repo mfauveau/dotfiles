@@ -10,7 +10,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT
 
 prompt_virtualenv() {
     VIRT_ENV_TXT="(`basename \"$VIRTUAL_ENV\"`) "
-    if [ "${VIRT_ENV_TXT}" != "()" ]; then
+    if [ "${VIRT_ENV_TXT}" != "() " ]; then
        echo ${VIRT_ENV_TXT}" "
     else
        return
