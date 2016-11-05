@@ -33,7 +33,7 @@ run_brew() {
             'wget'
             'python'
             'autoenv'
-            'homebrew/php/php56'
+            'homebrew/php/php71'
         )
 
         for index in ${!desired_formulae[*]}
