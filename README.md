@@ -1,7 +1,6 @@
 # Dotfiles (Matthieu Fauveau)
 
-My OS X dotfiles.
-
+My macOS dotfiles.
 
 ## How to install
 
@@ -87,20 +86,19 @@ Python packages:
 * [virtualenvwrapper](https://virtualenvwrapper.readthedocs.org/en/latest/)
 * [bpython](http://www.bpython-interpreter.org/)
 
-### Custom OS X defaults
+### Custom macOS defaults
 
-Custom OS X settings can be applied during the `dotfiles` process. They can
+Custom macOS settings can be applied during the `dotfiles` process. They can
 also be applied independently by running the following command:
 
 ```bash
-$ osxdefaults
+$ macosdefaults
 ```
 ### Custom bash prompt
 
-I use a custom bash prompt based on the Solarized color palette and influenced
+I use a custom bash prompt based on the Pastel (Dark Background) color palette and influenced
 by @gf3's and @cowboy's custom prompts. For best results, you should install
-iTerm2 and import [Solarized
-Dark.itermcolors](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized).
+iTerm2 and select the Pastel (Dark Background) color preset.
 
 When your current working directory is a Git repository, the prompt will
 display the checked-out branch's name (and failing that, the commit SHA that

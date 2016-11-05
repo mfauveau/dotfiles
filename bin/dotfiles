@@ -171,21 +171,21 @@ else
 fi
 
 # Ask before installing apps through brew cask
-seek_confirmation "Would you like to automatically install your OS X applications?"
+seek_confirmation "Would you like to automatically install your macOS applications?"
 
 if is_confirmed; then
     source ./lib/apps
     run_apps
 else
-    printf "Skipped installing OS X applications.\n"
+    printf "Skipped installing macOS applications.\n"
 fi
 
-# Ask before potentially overwriting OS X defaults
-seek_confirmation "Warning: This step may modify your OS X system defaults."
+# Ask before potentially overwriting macOS defaults
+seek_confirmation "Warning: This step may modify your macOS system defaults."
 
 if is_confirmed; then
-    bash ./bin/osxdefaults
-    e_success "OS X settings updated! You may need to restart."
+    bash ./bin/macosdefaults
+    e_success "macOS settings updated! You may need to restart."
 else
-    printf "Skipped OS X settings update.\n"
+    printf "Skipped macOS settings update.\n"
 fi
