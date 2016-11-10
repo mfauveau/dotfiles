@@ -50,3 +50,6 @@ alias hidedeskicons="defaults write com.apple.finder CreateDesktop -bool false &
 # PHP
 alias phpserver="php -S localhost:8000"
 alias composer="php /usr/local/bin/composer.phar"
+
+# Neofetch
+alias neofetch="neofetch --image 'ascii' --underline 'on' --underline_char ' ' --color_blocks 'off'"

@@ -33,7 +33,8 @@ run_brew() {
             'wget'
             'python'
             'autoenv'
-            'homebrew/php/php71'
+            'homebrew/php/php71',
+            'neofetch'
         )
 
         for index in ${!desired_formulae[*]}
