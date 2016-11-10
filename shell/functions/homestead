@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Make Homestead accessible globally
+function homestead() {
+    ( cd ~/Homestead && vagrant $* )
+}
